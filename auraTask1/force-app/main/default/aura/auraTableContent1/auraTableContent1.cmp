@@ -1,0 +1,23 @@
+<aura:component>
+    <aura:attribute name = 'contact' type = 'Contact'/>
+    <td>
+        <div class="slds-truncate" title="First Name">{!v.contact.FirstName}</div>
+    </td>
+    <td>
+        <div class="slds-truncate" title="Last Name">{!v.contact.LastName}</div>
+   </td>
+   <td>
+        <div class="slds-truncate" title="Email">{!v.contact.Email}</div>
+    </td>
+    <td>
+        <aura:if isTrue="{!v.contact.Account}">
+            <a href = '{!v.contact.accountPageUrl}' onclick = '{!c.handleAccountClick}'>{!v.contact.Account.Name}</a>
+        </aura:if>
+    </td>   
+    <td>
+        <div class="slds-truncate" title="Mobile Phone">{!v.contact.MobilePhone}</div>
+    </td>
+    <td>
+        <lightning:formattedDateTime value='{!v.contact.CreatedDate}' year="numeric" month="2-digit" day="2-digit" hour="2-digit" minute="2-digit" second="2-digit" hour12="true"></lightning:formattedDateTime>
+    </td>
+</aura:component>	
